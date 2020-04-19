@@ -1,0 +1,50 @@
+import java.util.ArrayList;
+        import java.util.List;
+        import java.util.concurrent.ThreadLocalRandom;
+
+public class Restaurant {
+
+ 
+    public static void main(String[] args)
+    {
+
+        
+        List<String> list = new ArrayList<>();
+
+        // ArrayList
+        list.add("Taco Bell");
+        list.add("Whataburger");
+        list.add("McDonalds");
+        list.add("Popeyes");
+        list.add("Chili's");
+        list.add("In & Out");
+        list.add("Logan's");
+        list.add("Panda Express");
+        list.add("Churches Chicken");
+        list.add("KFC");
+        list.add("Taco Bueno");
+        list.add("Sonic");
+        list.add("Pizza Hut");
+        list.add("Subway");
+        list.add("Home!");
+        list.add("Domino's Pizza");
+
+
+        Restaurant obj = new Restaurant();
+
+        // boundIndex for select in sub list
+        int boundIndex = 16;
+
+        // take a random element from list and print them
+        System.out.println("Today you will eat at " + obj.getRandomElement(list, boundIndex) + ".");
+    }
+
+    // Function select an element base on index and return an element
+    public String getRandomElement(List<String> list, int bound)
+    {
+        // ThreadLocalRandom generate a int type number
+        return list.get(ThreadLocalRandom.current()
+                .nextInt(list.size())
+                % bound);
+    }
+}
